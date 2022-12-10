@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.*;
 
-public class ToDoTest extends TestBase {
+public class GetTests extends TestBase {
 
     @Test
     public void getAlltoDos() {
@@ -68,9 +68,9 @@ public class ToDoTest extends TestBase {
                         .pathParam("userId", 9)
                         .pathParam("completed", true)
                         .pathParam("title", titlevar)
-                        .when()
+                .when()
                         .get(baseUrl + "?userId={userId}&completed={completed}&title={title}")
-                        .then()
+                .then()
                         .statusCode(201)
                         .extract()
                         .response();
