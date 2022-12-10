@@ -1,4 +1,4 @@
-package Exercises;
+package OPexercise;
 
 public class Employee {
     private String imie;
