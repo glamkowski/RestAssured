@@ -37,12 +37,28 @@ public class GetTests extends TestBase {
     @Test
     public void getAllToDosWithUserId2() {
         // https://jsonplaceholder.typicode.com/todos?userId=2
+        Response resp =
         given()
                 .pathParam("userId", 2)
                 .when()
                 .get(baseUrl + "?{userId}")
                 .then()
-                .statusCode(200);
+                .statusCode(200)
+                .extract()
+                .response();
+    }
+
+    @Test
+    public void getPostId3() {
+        // https://jsonplaceholder.typicode.com/todos?userId=2
+        Response resp =
+                given()
+                        .when()
+                        .get(" https://jsonplaceholder.typicode.com/posts/4")
+                        .then()
+                        .statusCode(200)
+                        .extract()
+                        .response();
     }
 
     @Test
